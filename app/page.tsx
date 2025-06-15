@@ -1,0 +1,191 @@
+import ReportMap from "@/components/report-map"
+import ReportForm from "@/components/report-form"
+import RecentReports from "@/components/recent-reports"
+import { MapPin, Shield, Bell } from "lucide-react"
+
+export default function Home() {
+  return (
+    <main className="min-h-screen flex flex-col bg-[#f5f5f7]">
+      <header className="bg-[#ffffff] backdrop-blur-md bg-opacity-90 border-b border-[#e5e5e7] sticky top-0 z-10">
+        <div className="container mx-auto px-6 py-5">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl text-[#1d1d1f] font-extralight">ICE Location Tracker</h1>
+            </div>
+            <nav className="hidden md:flex space-x-8">
+              <a href="#" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+                Map
+              </a>
+              <a href="#" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+                Report
+              </a>
+              <a href="#" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+                About
+              </a>
+              <a href="#" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+                Resources
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <section className="bg-gradient-to-b from-[#ffffff] to-[#f5f5f7] py-16">
+        <div className="container mx-auto px-6 text-center font-extralight">
+          <h2 className="text-4xl md:text-5xl text-[#1d1d1f] tracking-tight font-extralight">
+            Community-Powered Awareness
+          </h2>
+          <p className="mt-4 text-xl text-[#86868b] max-w-2xl mx-auto">
+            Report and track ICE presence in your community to help keep everyone informed and safe.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <ReportMap />
+            </div>
+            <div className="space-y-8">
+              <ReportForm />
+              <RecentReports />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-semibold text-center text-[#1d1d1f] mb-12">How It Works</h2>
+
+          <div className="grid md:grid-cols-3 gap-12 text-center">
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-[#f5f5f7] flex items-center justify-center mb-6">
+                <MapPin className="h-8 w-8 text-[#0066cc]" />
+              </div>
+              <h3 className="text-xl font-medium text-[#1d1d1f] mb-3">Report Locations</h3>
+              <p className="text-[#86868b]">Easily submit ICE sightings with precise location data and descriptions.</p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-[#f5f5f7] flex items-center justify-center mb-6">
+                <Shield className="h-8 w-8 text-[#0066cc]" />
+              </div>
+              <h3 className="text-xl font-medium text-[#1d1d1f] mb-3">Stay Informed</h3>
+              <p className="text-[#86868b]">View real-time and historical data about ICE presence in your area.</p>
+            </div>
+
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-[#f5f5f7] flex items-center justify-center mb-6">
+                <Bell className="h-8 w-8 text-[#0066cc]" />
+              </div>
+              <h3 className="text-xl font-medium text-[#1d1d1f] mb-3">Community Network</h3>
+              <p className="text-[#86868b]">Be part of a network that helps communities stay aware and prepared.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-[#f5f5f7] border-t border-[#e5e5e7] py-12">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <h4 className="text-sm font-semibold text-[#1d1d1f] mb-4">About</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Our Mission
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Privacy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Terms of Use
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold text-[#1d1d1f] mb-4">Resources</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Know Your Rights
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Legal Aid
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Community Support
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold text-[#1d1d1f] mb-4">Support</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Report an Issue
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Feedback
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-sm font-semibold text-[#1d1d1f] mb-4">Connect</h4>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
+                    Signal Group
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-[#e5e5e7]">
+            <p className="text-sm text-[#86868b] text-center">
+              © {new Date().getFullYear()} ICE Location Tracker. All rights reserved.
+              <br />
+              <span className="text-xs">
+                This tool is designed to help communities stay informed. Please use responsibly.
+              </span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  )
+}
