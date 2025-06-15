@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { db } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import Link from "next/link"
+import { Menu, X } from "lucide-react"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -42,9 +45,8 @@ const Contact = () => {
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Detailed error:', error);
-      console.error('Error code:', error.code);
-      console.error('Error message:', error.message);
-      alert(`Error: ${error.code} - ${error.message}`);
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      alert(`Error submitting form: ${errorMessage}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -52,8 +54,70 @@ const Contact = () => {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-[#f5f5f7] py-16">
-        <div className="container mx-auto px-6 max-w-2xl">
+      <main className="min-h-screen flex flex-col bg-[#f5f5f7]">
+        <header className="bg-[#ffffff] backdrop-blur-md bg-opacity-90 border-b border-[#e5e5e7] sticky top-0 z-10">
+          <div className="container mx-auto px-6 py-5">
+            <div className="flex items-center justify-between">
+              <div>
+                <Link href="/" className="text-2xl text-[#1d1d1f] font-extralight hover:text-[#0066cc]">
+                  ICE Location Tracker
+                </Link>
+              </div>
+              
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex space-x-8">
+                <Link href="/" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+                  Home
+                </Link>
+                <Link href="/about" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+                  About
+                </Link>
+                <Link href="/contact" className="text-[#0066cc] text-sm font-extralight">
+                  Contact
+                </Link>
+              </nav>
+
+              {/* Mobile Menu Button */}
+              <button
+                className="md:hidden p-2 text-[#1d1d1f] hover:text-[#0066cc]"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
+
+            {/* Mobile Navigation */}
+            {isMobileMenuOpen && (
+              <nav className="md:hidden mt-4 pb-4 border-t border-[#e5e5e7] pt-4">
+                <div className="flex flex-col space-y-4">
+                  <Link 
+                    href="/" 
+                    className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                  <Link 
+                    href="/about" 
+                    className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    About
+                  </Link>
+                  <Link 
+                    href="/contact" 
+                    className="text-[#0066cc] text-sm font-extralight py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                </div>
+              </nav>
+            )}
+          </div>
+        </header>
+        <div className="container mx-auto px-6 max-w-2xl py-16">
           <div className="bg-white rounded-lg p-8 shadow-sm text-center">
             <h1 className="text-4xl font-extralight text-[#1d1d1f] mb-4">Thank You!</h1>
             <p className="text-lg text-[#86868b] mb-6">
@@ -67,13 +131,75 @@ const Contact = () => {
             </button>
           </div>
         </div>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#f5f5f7] py-16">
-      <div className="container mx-auto px-6 max-w-2xl">
+    <main className="min-h-screen flex flex-col bg-[#f5f5f7]">
+      <header className="bg-[#ffffff] backdrop-blur-md bg-opacity-90 border-b border-[#e5e5e7] sticky top-0 z-10">
+        <div className="container mx-auto px-6 py-5">
+          <div className="flex items-center justify-between">
+            <div>
+              <Link href="/" className="text-2xl text-[#1d1d1f] font-extralight hover:text-[#0066cc]">
+                ICE Location Tracker
+              </Link>
+            </div>
+            
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-8">
+              <Link href="/" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+                Home
+              </Link>
+              <Link href="/about" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+                About
+              </Link>
+              <Link href="/contact" className="text-[#0066cc] text-sm font-extralight">
+                Contact
+              </Link>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 text-[#1d1d1f] hover:text-[#0066cc]"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <nav className="md:hidden mt-4 pb-4 border-t border-[#e5e5e7] pt-4">
+              <div className="flex flex-col space-y-4">
+                <Link 
+                  href="/" 
+                  className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link 
+                  href="/about" 
+                  className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="text-[#0066cc] text-sm font-extralight py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </div>
+            </nav>
+          )}
+        </div>
+      </header>
+      <div className="container mx-auto px-6 max-w-2xl py-16">
         <h1 className="text-4xl font-extralight text-[#1d1d1f] mb-8">Contact Us</h1>
         <form onSubmit={handleSubmit} className="bg-white rounded-lg p-8 shadow-sm">
           <div className="space-y-6">
@@ -126,7 +252,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-    </div>
+    </main>
   );
 };
 

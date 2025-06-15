@@ -1,9 +1,14 @@
+"use client"
+
+import { useState } from "react"
 import ReportMap from "@/components/report-map"
 import ReportForm from "@/components/report-form"
 import RecentReports from "@/components/recent-reports"
-import { MapPin, Shield, Bell } from "lucide-react"
+import { MapPin, Shield, Bell, Menu, X } from "lucide-react"
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
   return (
     <main className="min-h-screen flex flex-col bg-[#f5f5f7]">
       <header className="bg-[#ffffff] backdrop-blur-md bg-opacity-90 border-b border-[#e5e5e7] sticky top-0 z-10">
@@ -12,6 +17,8 @@ export default function Home() {
             <div>
               <h1 className="text-2xl text-[#1d1d1f] font-extralight">ICE Location Tracker</h1>
             </div>
+            
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
               <a href="#" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
                 Map
@@ -23,7 +30,45 @@ export default function Home() {
                 Contact
               </a>
             </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 text-[#1d1d1f] hover:text-[#0066cc]"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {isMobileMenuOpen && (
+            <nav className="md:hidden mt-4 pb-4 border-t border-[#e5e5e7] pt-4">
+              <div className="flex flex-col space-y-4">
+                <a 
+                  href="#" 
+                  className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Map
+                </a>
+                <a 
+                  href="/about" 
+                  className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About
+                </a>
+                <a 
+                  href="/contact" 
+                  className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </a>
+              </div>
+            </nav>
+          )}
         </div>
       </header>
 

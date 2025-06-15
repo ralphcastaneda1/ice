@@ -1,0 +1,1 @@
+A community‑powered web application for reporting and visualizing ICE (Immigration and Customs Enforcement) presence in your local area. Built with Next.js, Tailwind CSS, and Firebase for backend storage and image uploads.
