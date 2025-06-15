@@ -46,9 +46,11 @@ export function DateRangePicker({ date, onDateChange }: DateRangePickerProps) {
             mode="range"
             defaultMonth={date?.from}
             selected={date}
-            onSelect={onDateChange}
-            numberOfMonths={2}
-            className="rounded-lg"
+            onSelect={(selectedDate) => selectedDate && onDateChange(selectedDate)}
+            numberOfMonths={1}
+            showOutsideDays={false}
+            required={false}
+            className="rounded-lg no-weekdays"
           />
         </PopoverContent>
       </Popover>

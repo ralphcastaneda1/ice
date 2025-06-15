@@ -32,12 +32,19 @@ export default function ReportMap() {
 
   // Calculate activity statistics
   const getActivityStats = () => {
-    if (reports.length === 0) return { hotspots: 0, totalReports: 0, avgIntensity: 0 }
+    // Filter out reports from future dates
+    const now = new Date()
+    const validReports = reports.filter(report => {
+      const reportDate = new Date(report.timestamp)
+      return reportDate <= now
+    })
+
+    if (validReports.length === 0) return { hotspots: 0, totalReports: 0, avgIntensity: 0 }
 
     const gridSize = 0.01
     const locationGroups = new Map()
 
-    reports.forEach((report) => {
+    validReports.forEach((report) => {
       const gridKey = `${Math.round(report.latitude / gridSize)},${Math.round(report.longitude / gridSize)}`
       if (!locationGroups.has(gridKey)) {
         locationGroups.set(gridKey, [])
@@ -46,7 +53,7 @@ export default function ReportMap() {
     })
 
     const hotspots = Array.from(locationGroups.values()).filter((group) => group.length >= 2).length
-    const totalReports = reports.length
+    const totalReports = validReports.length
     const avgIntensity = Math.round(
       (Array.from(locationGroups.values()).reduce((sum, group) => sum + group.length, 0) / locationGroups.size) * 10,
     )
@@ -155,7 +162,7 @@ export default function ReportMap() {
       <div className="p-4 bg-[#f5f5f7] border-t border-[#e5e5e7]">
         <div className="flex items-center justify-between mb-3">
           <div className="text-sm font-extralight text-[#1d1d1f]">Intensity-Based Heatmap Legend</div>
-          <span className="text-xs text-[#86868b]">{reports.length} reports analyzed</span>
+          <span className="text-xs text-[#86868b]">{stats.totalReports} reports analyzed</span>
         </div>
 
         <div className="grid grid-cols-2 gap-6 text-xs text-[#86868b]">

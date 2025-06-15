@@ -133,6 +133,15 @@ export default function MapComponent({ reports, showHeatmap }: MapComponentProps
 
     if (!map || !heatmapLayer) return
 
+    // Filter out reports from future dates
+    const now = new Date()
+    const validReports = reports.filter(report => {
+      const reportDate = new Date(report.timestamp)
+      return reportDate <= now
+    })
+
+    console.log("Filtered reports (excluding future dates):", validReports)
+
     // Close any open info window before clearing markers
     if (infoWindowRef.current) {
       infoWindowRef.current.close()
@@ -145,7 +154,7 @@ export default function MapComponent({ reports, showHeatmap }: MapComponentProps
     if (showHeatmap) {
       // Show heatmap, hide markers
       heatmapLayer.setMap(map)
-      const heatMapData = reports.map((report) => ({
+      const heatMapData = validReports.map((report) => ({
         location: new google.maps.LatLng(report.latitude, report.longitude),
         weight: 1, // Each report contributes equally to intensity
       }))
@@ -159,12 +168,12 @@ export default function MapComponent({ reports, showHeatmap }: MapComponentProps
       const processedReports = new Set<string>()
       const newMarkers: google.maps.Marker[] = []
 
-      reports.forEach((report) => {
+      validReports.forEach((report) => {
         const reportKey = `${report.latitude.toFixed(4)},${report.longitude.toFixed(4)}`
         if (processedReports.has(reportKey)) return
 
         // Find nearby reports
-        const nearbyReports = reports.filter((r) => {
+        const nearbyReports = validReports.filter((r) => {
           const distance = Math.sqrt(
             Math.pow(r.latitude - report.latitude, 2) + Math.pow(r.longitude - report.longitude, 2),
           )

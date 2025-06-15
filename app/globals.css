@@ -315,3 +315,40 @@ select {
   font-size: 11px !important;
   color: #666 !important;
 }
+
+/* Hide calendar weekday headers */
+.rdp thead,
+.rdp .rdp-head_row,
+.rdp .rdp-head_cell,
+.rdp-head_row,
+.rdp-head_cell,
+[data-testid="head-row"],
+[role="columnheader"],
+.rdp th {
+  display: none !important;
+}
+
+/* Also hide any table header elements in calendar */
+.rdp table thead,
+.rdp table th {
+  display: none !important;
+}
+
+/* Target specific calendar component classes */
+.rdp-head,
+.rdp-caption + table thead {
+  display: none !important;
+}
+
+/* Hide flex-based headers */
+.rdp .flex [role="columnheader"] {
+  display: none !important;
+}
+
+/* Custom class to hide weekdays */
+.no-weekdays .rdp-head_row,
+.no-weekdays .rdp-head_cell,
+.no-weekdays thead,
+.no-weekdays th {
+  display: none !important;
+}
