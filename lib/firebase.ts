@@ -10,7 +10,7 @@ import { getAnalytics } from "firebase/analytics" // For analytics
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCbMw5OnMB3wHFTBK0aXh_UXfWOzEEeI2M",
+  apiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   authDomain: "ice-tool-83c19.firebaseapp.com",
   projectId: "ice-tool-83c19",
   storageBucket: "ice-tool-83c19.firebasestorage.app",

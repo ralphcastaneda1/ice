@@ -23,7 +23,7 @@ export default function RootLayout({
         <script
           async
           defer
-          src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyCvRMQVrNFP5pcgSjLkwqGrhhMu5q7woG4&libraries=visualization`}
+          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }&libraries=visualization`}
         ></script>
       </head>
       <body className="font-sf-pro">
