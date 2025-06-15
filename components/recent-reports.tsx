@@ -49,7 +49,7 @@ export default function RecentReports() {
   if (isLoading) {
     return (
       <div className="bg-white rounded-2xl shadow-sm p-6 transition-all duration-300 hover:shadow-md">
-        <h2 className="text-xl font-semibold text-[#1d1d1f] mb-6">Recent Reports</h2>
+        <h2 className="text-xl font-extralight text-[#1d1d1f] mb-6">Recent Reports</h2>
         <div className="flex justify-center py-8">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#0066cc]"></div>
         </div>
@@ -60,7 +60,7 @@ export default function RecentReports() {
   return (
     <div className="bg-white rounded-2xl shadow-sm p-6 transition-all duration-300 hover:shadow-md">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-semibold text-[#1d1d1f]">Recent Reports</h2>
+        <h2 className="text-xl font-extralight text-[#1d1d1f]">Recent Reports</h2>
         <Button
           onClick={handleRefresh}
           disabled={isRefreshing}
@@ -92,7 +92,7 @@ export default function RecentReports() {
         <ul className="space-y-6">
           {reports.map((report) => (
             <li key={report.id} className="border-b border-[#e5e5e7] pb-6 last:border-0">
-              <div className="font-medium text-[#1d1d1f] flex items-center">
+              <div className="font-extralight text-[#1d1d1f] flex items-center">
                 {report.location}
                 {report.images && report.images.length > 0 && (
                   <div className="ml-2 flex items-center text-[#0066cc]">

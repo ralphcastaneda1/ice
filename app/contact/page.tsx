@@ -55,7 +55,7 @@ const Contact = () => {
       <div className="min-h-screen bg-[#f5f5f7] py-16">
         <div className="container mx-auto px-6 max-w-2xl">
           <div className="bg-white rounded-lg p-8 shadow-sm text-center">
-            <h1 className="text-4xl font-light text-[#1d1d1f] mb-4">Thank You!</h1>
+            <h1 className="text-4xl font-extralight text-[#1d1d1f] mb-4">Thank You!</h1>
             <p className="text-lg text-[#86868b] mb-6">
               Your message has been sent successfully. We'll get back to you soon.
             </p>
@@ -74,46 +74,48 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-[#f5f5f7] py-16">
       <div className="container mx-auto px-6 max-w-2xl">
-        <h1 className="text-4xl font-light text-[#1d1d1f] mb-8">Contact Us</h1>
+        <h1 className="text-4xl font-extralight text-[#1d1d1f] mb-8">Contact Us</h1>
         <form onSubmit={handleSubmit} className="bg-white rounded-lg p-8 shadow-sm">
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-[#1d1d1f] mb-2">
-              Name
-            </label>
-            <input 
-              type="text" 
-              name="name" 
-              value={formData.name}
-              onChange={handleChange}
-              required 
-              className="w-full px-4 py-3 border border-[#e5e5e7] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066cc]"
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-[#1d1d1f] mb-2">
-              Email
-            </label>
-            <input 
-              type="email" 
-              name="email" 
-              value={formData.email}
-              onChange={handleChange}
-              required 
-              className="w-full px-4 py-3 border border-[#e5e5e7] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066cc]"
-            />
-          </div>
-          <div className="mb-6">
-            <label className="block text-sm font-medium text-[#1d1d1f] mb-2">
-              Message
-            </label>
-            <textarea 
-              name="message" 
-              value={formData.message}
-              onChange={handleChange}
-              required 
-              rows={5}
-              className="w-full px-4 py-3 border border-[#e5e5e7] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066cc] resize-vertical"
-            />
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-extralight text-[#1d1d1f] mb-2">
+                Name
+              </label>
+              <input 
+                type="text" 
+                name="name" 
+                value={formData.name}
+                onChange={handleChange}
+                required 
+                className="w-full px-4 py-3 border border-[#e5e5e7] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066cc]"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-extralight text-[#1d1d1f] mb-2">
+                Email
+              </label>
+              <input 
+                type="email" 
+                name="email" 
+                value={formData.email}
+                onChange={handleChange}
+                required 
+                className="w-full px-4 py-3 border border-[#e5e5e7] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066cc]"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-extralight text-[#1d1d1f] mb-2">
+                Message
+              </label>
+              <textarea 
+                name="message" 
+                value={formData.message}
+                onChange={handleChange}
+                required 
+                rows={5}
+                className="w-full px-4 py-3 border border-[#e5e5e7] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0066cc] resize-vertical"
+              />
+            </div>
           </div>
           <button 
             type="submit"

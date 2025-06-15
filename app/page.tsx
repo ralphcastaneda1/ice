@@ -54,31 +54,31 @@ export default function Home() {
 
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-semibold text-center text-[#1d1d1f] mb-12">How It Works</h2>
+          <h2 className="text-3xl font-extralight text-center text-[#1d1d1f] mb-12">How It Works</h2>
 
           <div className="grid md:grid-cols-3 gap-12 text-center">
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-[#f5f5f7] flex items-center justify-center mb-6">
                 <MapPin className="h-8 w-8 text-[#0066cc]" />
               </div>
-              <h3 className="text-xl font-medium text-[#1d1d1f] mb-3">Report Locations</h3>
-              <p className="text-[#86868b]">Easily submit ICE sightings with precise location data and descriptions.</p>
+              <h3 className="text-xl font-extralight text-[#1d1d1f] mb-3">Report Locations</h3>
+              <p className="text-[#86868b] font-extralight">Easily submit ICE sightings with precise location data and descriptions.</p>
             </div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-[#f5f5f7] flex items-center justify-center mb-6">
                 <Shield className="h-8 w-8 text-[#0066cc]" />
               </div>
-              <h3 className="text-xl font-medium text-[#1d1d1f] mb-3">Stay Informed</h3>
-              <p className="text-[#86868b]">View real-time and historical data about ICE presence in your area.</p>
+              <h3 className="text-xl font-extralight text-[#1d1d1f] mb-3">Stay Informed</h3>
+              <p className="text-[#86868b] font-extralight">View real-time and historical data about ICE presence in your area.</p>
             </div>
 
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 rounded-full bg-[#f5f5f7] flex items-center justify-center mb-6">
                 <Bell className="h-8 w-8 text-[#0066cc]" />
               </div>
-              <h3 className="text-xl font-medium text-[#1d1d1f] mb-3">Community Network</h3>
-              <p className="text-[#86868b]">Be part of a network that helps communities stay aware and prepared.</p>
+              <h3 className="text-xl font-extralight text-[#1d1d1f] mb-3">Community Network</h3>
+              <p className="text-[#86868b] font-extralight">Be part of a network that helps communities stay aware and prepared.</p>
             </div>
           </div>
         </div>

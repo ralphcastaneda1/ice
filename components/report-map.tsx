@@ -103,21 +103,21 @@ export default function ReportMap() {
           <div className="text-center">
             <div className="flex items-center justify-center mb-1">
               <BarChart3 className="w-4 h-4 text-[#0066cc] mr-1" />
-              <span className="text-lg font-semibold text-[#1d1d1f]">{stats.totalReports}</span>
+              <span className="text-lg font-extralight text-[#1d1d1f]">{stats.totalReports}</span>
             </div>
             <div className="text-xs text-[#86868b]">Total Reports</div>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center mb-1">
               <TrendingUp className="w-4 h-4 text-[#ea580c] mr-1" />
-              <span className="text-lg font-semibold text-[#1d1d1f]">{stats.hotspots}</span>
+              <span className="text-lg font-extralight text-[#1d1d1f]">{stats.hotspots}</span>
             </div>
             <div className="text-xs text-[#86868b]">Activity Hotspots</div>
           </div>
           <div className="text-center">
             <div className="flex items-center justify-center mb-1">
               <MapPin className="w-4 h-4 text-[#dc2626] mr-1" />
-              <span className="text-lg font-semibold text-[#1d1d1f]">{stats.avgIntensity}%</span>
+              <span className="text-lg font-extralight text-[#1d1d1f]">{stats.avgIntensity}%</span>
             </div>
             <div className="text-xs text-[#86868b]">Avg Intensity</div>
           </div>
@@ -154,13 +154,13 @@ export default function ReportMap() {
       {/* Enhanced Map legend and controls */}
       <div className="p-4 bg-[#f5f5f7] border-t border-[#e5e5e7]">
         <div className="flex items-center justify-between mb-3">
-          <div className="text-sm font-medium text-[#1d1d1f]">Intensity-Based Heatmap Legend</div>
+          <div className="text-sm font-extralight text-[#1d1d1f]">Intensity-Based Heatmap Legend</div>
           <span className="text-xs text-[#86868b]">{reports.length} reports analyzed</span>
         </div>
 
         <div className="grid grid-cols-2 gap-6 text-xs text-[#86868b]">
           <div className="space-y-2">
-            <div className="font-medium text-[#1d1d1f] mb-2">Heatmap Intensity</div>
+            <div className="font-extralight text-[#1d1d1f] mb-2">Heatmap Intensity</div>
             <div className="flex items-center">
               <div className="w-4 h-3 bg-blue-500 rounded mr-2"></div>
               <span>Very Low (1 report)</span>
@@ -184,7 +184,7 @@ export default function ReportMap() {
           </div>
 
           <div className="space-y-2">
-            <div className="font-medium text-[#1d1d1f] mb-2">Map Features</div>
+            <div className="font-extralight text-[#1d1d1f] mb-2">Map Features</div>
             <div className="flex items-center">
               <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-400 to-red-600 mr-2"></div>
               <span>Concentric heat zones</span>

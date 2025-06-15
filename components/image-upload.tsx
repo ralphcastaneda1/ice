@@ -121,7 +121,7 @@ export default function ImageUpload({ images, onImagesChange, maxImages = 3, max
           </div>
 
           <div>
-            <p className="text-sm font-medium text-[#1d1d1f]">Add photos to your report</p>
+            <p className="text-sm font-extralight text-[#1d1d1f]">Add photos to your report</p>
             <p className="text-xs text-[#86868b] mt-1">Drag and drop images here, or click to browse</p>
           </div>
 
@@ -153,7 +153,7 @@ export default function ImageUpload({ images, onImagesChange, maxImages = 3, max
       {/* Image Previews */}
       {images.length > 0 && (
         <div className="space-y-3">
-          <h4 className="text-sm font-medium text-[#1d1d1f]">
+          <h4 className="text-sm font-extralight text-[#1d1d1f]">
             Selected Images ({images.length}/{maxImages})
           </h4>
           <div className="grid grid-cols-2 gap-3">

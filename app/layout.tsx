@@ -36,7 +36,7 @@ export default function RootLayout({
           `}
         </script>
       </head>
-      <body className="font-sf-pro">
+      <body className="font-sf-pro font-extralight">
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
           <Toaster />

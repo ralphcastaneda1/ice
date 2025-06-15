@@ -77,7 +77,7 @@ export default function ImageGallery({ images, alt = "Report image" }: ImageGall
               {/* Show count overlay for 4+ images */}
               {index === 3 && images.length > 4 && (
                 <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-                  <span className="text-white font-semibold text-lg">+{images.length - 4}</span>
+                  <span className="text-white font-extralight text-lg">+{images.length - 4}</span>
                 </div>
               )}
             </div>

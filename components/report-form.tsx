@@ -153,7 +153,7 @@ export default function ReportForm() {
         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start">
           <AlertTriangle className="h-5 w-5 text-red-600 mr-2 mt-0.5" />
           <div>
-            <span className="text-red-800 text-sm font-medium">Submission Error</span>
+            <span className="text-red-800 text-sm font-extralight">Submission Error</span>
             <p className="text-red-700 text-sm mt-1">{submitError}</p>
           </div>
         </div>
@@ -273,7 +273,7 @@ export default function ReportForm() {
 
           {/* Image Upload Section */}
           <div className="space-y-3">
-            <label className="text-sm font-medium text-[#1d1d1f]">Photos (Optional)</label>
+            <label className="text-sm font-extralight text-[#1d1d1f]">Photos (Optional)</label>
             <ImageUpload images={selectedImages} onImagesChange={setSelectedImages} maxImages={3} maxSizePerImage={5} />
             <p className="text-xs text-[#86868b]">
               Adding photos helps verify reports and provides valuable context for the community.
