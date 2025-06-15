@@ -16,14 +16,11 @@ export default function Home() {
               <a href="#" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
                 Map
               </a>
-              <a href="#" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
-                Report
-              </a>
-              <a href="#" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+              <a href="/about" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
                 About
               </a>
-              <a href="#" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
-                Resources
+              <a href="/contact" className="text-[#1d1d1f] hover:text-[#0066cc] text-sm font-extralight">
+                Contact
               </a>
             </nav>
           </div>
@@ -89,94 +86,8 @@ export default function Home() {
 
       <footer className="bg-[#f5f5f7] border-t border-[#e5e5e7] py-12">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h4 className="text-sm font-semibold text-[#1d1d1f] mb-4">About</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Our Mission
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Privacy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Terms of Use
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-[#1d1d1f] mb-4">Resources</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Know Your Rights
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Legal Aid
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Community Support
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-[#1d1d1f] mb-4">Support</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Report an Issue
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Feedback
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold text-[#1d1d1f] mb-4">Connect</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Twitter
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm text-[#86868b] hover:text-[#0066cc]">
-                    Signal Group
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 pt-8 border-t border-[#e5e5e7]">
-            <p className="text-sm text-[#86868b] text-center">
+          <div className="text-center">
+            <p className="text-sm text-[#86868b]">
               © {new Date().getFullYear()} ICE Location Tracker. All rights reserved.
               <br />
               <span className="text-xs">
